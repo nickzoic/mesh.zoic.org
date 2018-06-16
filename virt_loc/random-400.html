@@ -1,0 +1,58 @@
+<html><head><title>Virtual Localization for Mesh Network Routing</title></head>
+<body>
+
+<center><h1>Virtual Localization for Mesh Network Routing</h1>
+Nick Moore / Ahmet Sekercioglu / Gregory K Egan</center>
+
+<h2>Addendum: 400-Node Random Mesh</h2>
+
+A commonly used method for generating <em>N</em>-node random meshes is to
+pick <em>N</em> random locations within a square area.  This method does nothing
+to prevent disjoint networks being generated, but for a high density
+of nodes this rarely occurs.  This random scattering of nodes is not
+very realistic, although it might be similar to the distribution of
+small, rugged sensor motes scattered from an aeroplane.
+<p>
+Capkun, et al.<A HREF="#CAPKUN">[1]</A> use this model, randomly distributing
+400 nodes in a 1km x 1km square, and varying the link range to
+90, 100 or 110m to tune network connectivity.
+<p>
+Once the nodes are placed, topological
+information is extracted and the original location information is forgotten.
+Figure 1 shows the result of placing 400 nodes in a
+square kilometre, with a link range of 100m.  Snapshots of the virtual
+location of active nodes are shown for 1000, 2000 and 3000 elapsed
+milliseconds, and at bottom right is a representation of the 
+actual layout of the network which was used to create the topology.
+<p>
+Some features of the original network are visible in the virtual
+layout, but it's not very clear.  A more important metric of the
+performance of the algorithm is the number of routable nodes.  
+Once the network has converged, 97% of nodes are routeable, with
+only 12 nodes, in a group at the center right, remaining unroutable.
+These nodes are well-located, so a more sophisticated location-based
+routing scheme should
+be able to determine routes to and from these nodes.
+
+<hr>
+<h3>Figure 1A:</h3><img src="squarey_fix-001000.png">
+<h3>Figure 1B:</h3><img src="squarey_fix-002000.png">
+<h3>Figure 1C:</h3><img src="squarey_fix-003000.png">
+<h3>Figure 1D:</h3><img src="squarey_real.png">
+<p>
+<em>Figure 1: Nodes progressively discover their virtual locations (seen
+here at A: 1000, B: 2000 and C: 3000 ms) until
+the entire network has been virtually mapped.
+The root node is marked with a square, unrouteable nodes with circles.
+Note that these are 2D projections of the 3D virtual
+location, and have been manually rotated for clarity.  The original
+2D topology is included as D for comparison purposes.}</em>
+<hr>
+
+<hr>
+<a name="CAPKUN">
+[1] Srdjan Capkun, Maher Hamdi, and Jean-Pierre Hubaux.  
+GPS-free positioning in mobile ad-hoc networks.
+<em>Hawaii Int. Conf. on System Sciences (HICSS-34),</em>
+pages 3481-3490, January 2001.
+

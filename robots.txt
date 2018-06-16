@@ -1,0 +1,10 @@
+# Help!  I am a prisoner in a toothpaste factory!
+
+User-agent: *
+Disallow: /virt_loc/one.gif
+Disallow: /virt_loc/two.gif
+Disallow: /virt_dim/test2_conv.gif
+Disallow: /virt_dim/test2_rot.gif
+Disallow: /virt_mob/spode2.gif
+
+# That's all!
